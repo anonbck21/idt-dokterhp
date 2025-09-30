@@ -505,7 +505,7 @@ DB = {
 # Helper: build report text & PDF
 # ============================
 def build_report(platform, category, symptom, entry):
-    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     lines = []
     lines.append("="*68)
     lines.append("🔧 DokterHP v1 By IDT")
@@ -560,7 +560,7 @@ with col1:
         entry = DB[platform][category][symptom]
         report = build_report(platform, category, symptom, entry)
         st.session_state["current_report"] = report
-        st.experimental_rerun()  # rerun to show result area (simple way)
+        st.rerun()  # rerun to show result area (simple way)
 
 with col2:
     st.write("**Hasil Diagnosa & Saran**")
@@ -578,4 +578,5 @@ with col2:
 st.write("---")
 st.markdown("**Copyright © DokterHP v1 By IDT** · interested in collaboration @maxxjen1 on instagram", unsafe_allow_html=True)
 st.caption("Disclaimer: Hasil diagnostik adalah panduan awal. Untuk perbaikan hardware, lakukan pemeriksaan teknis dengan alat yang sesuai.")
+
 
