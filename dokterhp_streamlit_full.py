@@ -9,7 +9,7 @@
 # ============================================================
 
 import streamlit as st
-import datetime
+from datetime import datetime
 import textwrap
 import io
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
@@ -505,7 +505,7 @@ DB = {
 # Helper: build report text & PDF
 # ============================
 def build_report(platform, category, symptom, entry):
-    now = datetime.datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     lines = []
     lines.append("="*68)
     lines.append("🔧 DokterHP v1 By IDT")
@@ -578,3 +578,4 @@ with col2:
 st.write("---")
 st.markdown("**Copyright © DokterHP v1 By IDT** · interested in collaboration @maxxjen1 on instagram", unsafe_allow_html=True)
 st.caption("Disclaimer: Hasil diagnostik adalah panduan awal. Untuk perbaikan hardware, lakukan pemeriksaan teknis dengan alat yang sesuai.")
+
